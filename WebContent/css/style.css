@@ -1,0 +1,88 @@
+/*---------------------------------------
+				BASE 
+-----------------------------------------*/
+html, body, div, a, span, h1, h2, h3, h4 {
+    color: #333333;
+    font: 12px Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color:#0086FF;
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+ul li {
+    display: inline;
+}
+.f-left {
+    float:left !important;
+}
+.f-right {
+    float:right !important;
+}
+/*---------------------------------------
+				LAYOUT
+-----------------------------------------*/
+
+#wrapper {
+    position: relative;
+    width: 960px;
+    left:50%;
+    margin-left:-492px;
+	margin: 10px 0px 12px -492px;
+}
+
+#head {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin-bottom: 2px;
+}
+#head ul {
+    float: right;
+    margin-right: 20px;
+    padding-top: 25px;
+}
+#head h1 {
+    padding-top: 21px;
+}
+#head h1 a {
+    float:left;
+    width: 197px;
+    height: 62px;
+    overflow: hidden;
+    text-indent: -100px;
+    background: url("../images/logo.png") no-repeat scroll transparent;
+}
+#head .chat {
+    float:left;
+    width: 322px;
+    height: 83px;
+    margin-left: 120px;
+    background: url("../images/yc-pic.jpg") no-repeat scroll transparent;
+}
+
+#cols {
+    float: left;
+    width: 100%;
+    position:relative;
+    margin-bottom:10px;
+    clear:both;
+}
+
+#footer {
+    float: left;
+    width: 100%;
+    text-align: center;
+	margin-bottom:10px;
+}
+
+.license {
+    color: #666666;
+    float: left;
+    width: 100%;
+    text-align: center;
+}

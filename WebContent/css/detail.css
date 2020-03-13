@@ -1,0 +1,68 @@
+.address {
+	color: #D1D1D1;
+}
+.div {
+	widows: 960px;
+	height: 600px;
+}
+.div span {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.div1 {
+	width: 660px;
+	float: left;
+}
+.left {
+	 width: 500px;
+	 float: left;
+}
+.left p {
+	font-weight: bold;
+}
+.right {
+	 width: 160px; 
+	 float: right;
+}
+.right table {
+	width: 100%;
+	color: #00868B;
+}
+.right table tr:nth-child(odd){
+
+}
+.right table tr:nth-child(even){
+	background: #D1EEEE;
+}
+
+.div2 {
+	width: 300px;
+	float: right;
+	text-align: center;
+}
+.submit {
+	color: #FFFFFF;
+	background-color: #5FBA00;
+	cursor: pointer;
+	width: 220px;
+	height: 35px;
+	border-color: #459A00;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Î¢ÈíÑÅºÚ;
+	font-size: 20px;
+	font-weight: bold;	
+}
+.div2 table {
+	margin: 30px;
+}
+.div2 table tr {	
+	height: 40px;
+}
+
+
+
+
+
+

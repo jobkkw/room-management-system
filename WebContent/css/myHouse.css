@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.table {
+	text-align: center;
+	border: 1px;
+}
+.tr1 { 
+	background-color: #1874CD;
+}
+.tr2 {
+	background-color: #C6E2FF;
+}
+.font {
+	color: red;
+}

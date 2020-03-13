@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.multipart.saveDir" value="/upload"/>
+   	<package name="manager" namespace="" extends="struts-default">
+        <action name="adminLogin" class="com.ruanko.web.ManagerLoginAction" method="" >
+			<result name="fail">/adminLogin.jsp</result>
+			<result name="succ">/adminIndex.jsp</result>
+        </action>
+        <action name="adminLogout" class="com.ruanko.web.ManagerLogoutAction" method="" >
+        	<result>/adminLogin.jsp</result>
+        </action>
+   	</package> 
+  
+  	<package name="order" namespace="" extends="struts-default">       	             
+        <action name="order_*" class="com.ruanko.web.OrderAction" method="{1}" >
+			<result name="book_succ">/detail.jsp</result>
+			<result name="toUnchecked_succ">/checkOrder.jsp</result>
+			<result name="check_succ" type="chain">order_toUnchecked</result>
+        	<result name="refuse_succ" type="chain">order_toUnchecked</result>
+        	<result name="myUnChecked_succ">/myUnChecked.jsp</result>
+        	<result name="myChecked_succ">/myChecked.jsp</result>
+        	<result name="myAbolished_succ" type="chain">order_myUnChecked</result>
+        	<result name="myUnsubscribed_succ" type="chain">order_myChecked</result>
+        </action>
+   	</package>
+  
+  	<package name="house" namespace="" extends="struts-default">
+        <action name="toCreate" class="com.ruanko.web.ToCreateAction" method="execute" >
+			<result name="login">/login.jsp</result>
+			<result name="create">/create.jsp</result>
+        </action>
+        <action name="createHouse" class="com.ruanko.web.CreateHouseAction" method="" >
+        	<result name="login" type="chain">toLogin</result>
+        	<result name="create">/create.jsp</result>
+        	<result>/create.jsp</result>
+        </action>
+        <action name="myHouse" class="com.ruanko.web.ShowMyHouseAction" method="execute" >
+			<result>/myHouse.jsp</result>
+        </action>
+        <action name="toPublish" class="com.ruanko.web.PublishHouseAction" method="toPublish" >
+			<result>/publishHouse.jsp</result>
+        </action>
+        <action name="publish" class="com.ruanko.web.PublishHouseAction" method="publish" >
+			<result type="chain">toPublish</result>        	
+        </action>
+        <action name="house_*" class="com.ruanko.web.HouseAction" method="{1}" >
+        	<result name="search_succ">/list.jsp</result>
+        	<result name="getHouseById_succ">/detail.jsp</result>
+        	<result name="getHouseById_fail" type="chain">myHouse</result>
+        	<result name="toUnchecked_succ">/checkHouse.jsp</result>
+        	<result name="check_succ" type="chain">house_toUnchecked</result>
+        	<result name="refuse_succ" type="chain">house_toUnchecked</result>
+        </action>
+   	</package>
+  
+   	
+   	<package name="user" namespace="" extends="struts-default">
+        <action name="toLogout" class="com.ruanko.web.ToLogoutAction" method="" >
+			<result name="index">/index.jsp</result>
+        </action>
+        <action name="toHostIndex" class="com.ruanko.web.ToHostIndexAction" method="" >
+			<result name="hostindex">/hostIndex.jsp</result>
+        	<result name="login" type="chain">toLogin</result>
+        </action>
+        <action name="toRegister" class="com.ruanko.web.ToRegisterAction" method="" >
+			<result name="register">/register.jsp</result>
+        </action>
+        <action name="toLogin" class="com.ruanko.web.ToLoginAction" method="" >
+			<result name="login">/login.jsp</result>
+        </action>
+        <action name="toError" class="com.ruanko.web.ToErrorAction" method="" >
+			<result name="error">/error.jsp</result>
+        </action>
+        
+        <action name="register" class="com.ruanko.web.RegisterAction" method="" >
+			<result name="success" type="chain">toLogin</result>
+			<result name="fail" type="chain">toRegister</result>
+			<result name="error" type="chain">toError</result>
+        </action>
+        <action name="login" class="com.ruanko.web.LoginAction" method="" >
+			<result name="success" type="chain">toHostIndex</result>
+			<result name="fail" type="chain">toLogin</result>
+			<result name="error" type="chain">toError</result>
+        </action>
+        <action name="logout" class="com.ruanko.web.LogoutAction" method="" >
+			<result name="success" type="chain">toLogout</result>
+		</action>       
+   	</package>
+   	
+   	 	  	
+</struts>

@@ -1,0 +1,12 @@
+.menu {
+}
+.menu dl dt {
+	font-size: 20px;
+	font-weight: bold;
+
+}
+.menu dl dd {
+	color: blue;
+}
+
+
